@@ -17,7 +17,7 @@ public class MatrixItTest {
     }
 
     @Test
-    public void whenFirstEmptyThenNext() {
+     public void whenFirstEmptyThenNext() {
         int[][] in = {
                 {}, {1}
         };
