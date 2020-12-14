@@ -16,19 +16,10 @@ public class EvenIterator implements Iterator<Integer> {
 
     @Override
     public boolean hasNext() {
-        boolean rsl = true;
-        if (point >= numbers.length) {
-            rsl = false;
-
-        } else
-            while (numbers[point] % 2 != 0) {
-                point++;
-                if (point >= numbers.length) {
-                    rsl = false;
-                    break;
-                }
-            }
-        return rsl;
+        while (point < numbers.length && numbers[point] % 2 != 0) {
+            point++;
+        }
+        return point < numbers.length;
     }
 
     @Override
@@ -36,13 +27,7 @@ public class EvenIterator implements Iterator<Integer> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        Integer rsl = null;
-        if (numbers[point] % 2 == 0) {
-            rsl = numbers[point];
-            point++;
-            return rsl;
-        }
-        return rsl;
+        return numbers[point++];
     }
 
 
