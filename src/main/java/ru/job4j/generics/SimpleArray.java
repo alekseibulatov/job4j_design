@@ -62,12 +62,15 @@ public class SimpleArray<T> implements Iterable<T> {
 
             @Override
             public boolean hasNext() {
-                return indexIt <= a.length;
+                if (indexIt < a.length) {
+                    return true;
+                }
+                return false;
             }
 
             @Override
             public T next() {
-                return a[indexIt];
+                return a[indexIt++];
             }
         };
         return it;
