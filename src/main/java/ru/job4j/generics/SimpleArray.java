@@ -42,6 +42,7 @@ public class SimpleArray<T> implements Iterable<T> {
         validate(index);
         System.arraycopy(a, (index + 1), a, index, (a.length - 1 - index));
         a[a.length - 1] = null;
+        i--;
     }
 
     /**
@@ -61,7 +62,7 @@ public class SimpleArray<T> implements Iterable<T> {
 
             @Override
             public boolean hasNext() {
-                return a[indexIt] == null;
+                return indexIt <= a.length;
             }
 
             @Override
@@ -76,7 +77,7 @@ public class SimpleArray<T> implements Iterable<T> {
         if (Objects.checkIndex(index, a.length) != index) {
             throw new IndexOutOfBoundsException();
         }
-        return Objects.checkIndex(index, a.length);
+        return Objects.checkIndex(index, i);
     }
 }
 
