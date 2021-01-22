@@ -77,10 +77,14 @@ public class SimpleArray<T> implements Iterable<T> {
     }
 
     private int validate(int index) {
-        if (Objects.checkIndex(index, a.length) != index) {
-            throw new IndexOutOfBoundsException();
+        int x = -1;
+        try {
+            x = Objects.checkIndex(index, i);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+
         }
-        return Objects.checkIndex(index, i);
+        return x;
     }
 }
 
