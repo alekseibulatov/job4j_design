@@ -7,8 +7,8 @@ public class SimpleArray<T> implements Iterable<T> {
     private final T[] a;
     private int i = 0;
 
-    public SimpleArray(T[] a) {
-        this.a = a;
+    public SimpleArray(int size) {
+        this.a = (T[]) new Object[size];
     }
 
     /**
@@ -62,7 +62,7 @@ public class SimpleArray<T> implements Iterable<T> {
 
             @Override
             public boolean hasNext() {
-                if (indexIt < a.length) {
+                if (indexIt < i) {
                     return true;
                 }
                 return false;
@@ -77,14 +77,7 @@ public class SimpleArray<T> implements Iterable<T> {
     }
 
     private int validate(int index) {
-        int x = -1;
-        try {
-            x = Objects.checkIndex(index, i);
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
-
-        }
-        return x;
+        return Objects.checkIndex(index, i);
     }
 }
 
