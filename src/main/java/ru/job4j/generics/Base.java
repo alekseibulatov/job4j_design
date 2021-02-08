@@ -1,6 +1,6 @@
 package ru.job4j.generics;
 
-public abstract class Base {
+public abstract class  Base {
     private final String id;
 
     protected Base(final String id) {
