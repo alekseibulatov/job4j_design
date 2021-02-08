@@ -14,11 +14,19 @@ public final class MemStore<T extends Base> implements Store<T> {
 
     @Override
     public boolean replace(String id, T model) {
-        return false;
+        boolean result = false;
+        if (findById(id) == null) {
+            result = false;
+        } else {
+            mem.set(mem.indexOf(id), model);
+            result = true;
+        }
+        return result;
     }
 
     @Override
     public boolean delete(String id) {
+        mem.remove(mem.indexOf(id));
         return false;
     }
 
