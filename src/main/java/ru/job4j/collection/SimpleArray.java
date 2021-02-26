@@ -3,7 +3,13 @@ package ru.job4j.collection;
 import java.util.Iterator;
 
 public class SimpleArray<T> implements Iterable<T> {
-    private  T[] arr = new T[10];
+    private  final T[] array;
+
+    public SimpleArray(int size) {
+        this.array = (T[]) new Object[size];
+    }
+
+
     public T get(int index) {
         return null;
     }
