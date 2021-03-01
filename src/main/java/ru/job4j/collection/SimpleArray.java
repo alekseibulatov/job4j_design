@@ -1,5 +1,6 @@
 package ru.job4j.collection;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class SimpleArray<T> implements Iterable<T> {

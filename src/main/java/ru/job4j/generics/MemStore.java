@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class MemStore<T extends Base> implements Store<T> {
+
     private final List<T> mem = new ArrayList<>();
 
 
