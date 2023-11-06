@@ -1,15 +1,15 @@
-package ru.job4j.assertj;
+package ru.job4j.iterator;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ArrayItTest {
 
     @Test
     void whenMultiCallHasNextThenTrue() {
         ArrayIt iterator = new ArrayIt(
-                new int[] {1, 2, 3}
+                new int[]{1, 2, 3}
         );
         boolean result = iterator.hasNext();
         assertThat(result).isTrue();
@@ -19,7 +19,7 @@ class ArrayItTest {
     @Test
     void whenReadSequence() {
         ArrayIt iterator = new ArrayIt(
-                new int[] {1, 2, 3}
+                new int[]{1, 2, 3}
         );
         assertThat(iterator.next()).isEqualTo(1);
         assertThat(iterator.next()).isEqualTo(2);
