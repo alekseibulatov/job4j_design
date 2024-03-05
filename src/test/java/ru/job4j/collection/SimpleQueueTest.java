@@ -55,7 +55,6 @@ class SimpleQueueTest {
     void whenPushPushPollAndPush() {
         queue.push(2);
         queue.poll();
-  //      assertThat(queue.poll()).isEqualTo(1);
         queue.push(3);
         assertThat(queue.poll()).isEqualTo(2);
     }
